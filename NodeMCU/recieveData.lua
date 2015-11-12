@@ -20,8 +20,9 @@ uart.on("data", function(data)
         judgeRegime()
         sendCounter = sendCounter + 1
         if sendCounter == sendEvery then
-            valSet = sendToTS.setValue(1,concentration)
+            valSet = sendToTS.setValue(1,avg1um)
             sendToTS.sendData(false) -- don't show debug msgs
+            sendCounter = 0
         end
     end    
 end)
